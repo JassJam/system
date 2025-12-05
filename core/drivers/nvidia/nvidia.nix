@@ -38,7 +38,7 @@ in
       modesetting.enable = true;
 
       # Nvidia power management.
-      powerManagement.enable = false;
+      powerManagement.enable = true;
 
       # Fine-grained power management. Keep disabled for gaming performance
       powerManagement.finegrained = false;

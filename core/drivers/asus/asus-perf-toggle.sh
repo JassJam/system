@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
+
 # Function to set profile and notify
 set_profile() {
   local profile=$1
   local icon=$2
   local desc=$3
   
-  asusctl profile -P "$profile"
+  asusctl profile -P "$profile" 2>/dev/null
   dunstify -u normal -i "$icon" -a "ASUS Power" -r 2593 "Power Profile" "Switched to <b>$profile</b>$desc"
 }
 
@@ -33,7 +34,7 @@ if [ $# -gt 0 ]; then
   esac
 else
   # No argument: cycle through profiles
-  cur=$(asusctl profile -p | grep -oP '(?<=Active profile is )\w+')
+  cur=$(asusctl profile -p 2>/dev/null | grep -oP '(?<=Active profile is )\w+')
   case "$cur" in
     Performance)
       set_profile "Balanced" "battery-good" ""
