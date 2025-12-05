@@ -11,6 +11,7 @@ in
   options.coding.editors.jetbrains = {
     clion = lib.mkEnableOption "Install JetBrains CLion IDE";
     idea-community = lib.mkEnableOption "Install JetBrains IDEA Community Edition";
+    webstorm = lib.mkEnableOption "Install JetBrains WebStorm IDE";
   };
 
   config = {
@@ -22,6 +23,10 @@ in
       ++ lib.optionals cfg-jetbrains.idea-community [
         # idea community edition for java
         pkgs.jetbrains.idea-community
+      ]
+      ++ lib.optionals cfg-jetbrains.webstorm [
+        # webstorm ide for web development
+        pkgs.jetbrains.webstorm
       ];
   };
 }

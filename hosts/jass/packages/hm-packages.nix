@@ -90,6 +90,8 @@
       jetbrains.clion = true;
       # java ide
       jetbrains.idea-community = true;
+      # web ide
+      jetbrains.webstorm = true;
     };
 
     langs = {
