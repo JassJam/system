@@ -20,5 +20,8 @@
 
     # disk usage analyzers
     ./ncdu.nix
+
+    # touchpad gestures
+    ./fusuma.nix
   ];
 }

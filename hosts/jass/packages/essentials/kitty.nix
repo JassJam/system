@@ -25,6 +25,12 @@ in
 
         font_family = "JetBrainsMono Nerd Font";
       };
+      keybindings = {
+        # Enable ctrl+plus/minus for zoom (fusuma gestures send key names)
+        "ctrl+shift+equal" = "change_font_size all +1.0";
+        "ctrl+shift+minus" = "change_font_size all -1.0";
+        "ctrl+shift+0" = "change_font_size all 0";
+      };
     };
 
     catppuccin.kitty = cfg-catppuccin;

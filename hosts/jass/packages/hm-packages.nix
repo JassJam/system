@@ -64,6 +64,9 @@
 
     # ncdu disk usage analyzer
     disk-usage.ncdu.enable = true;
+
+    # fusuma touchpad gestures
+    gestures.fusuma.enable = false;
   };
 
   players = {
