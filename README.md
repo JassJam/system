@@ -37,14 +37,13 @@
    ```
 2. Copy the public key from the output
 3. Update `.sops.yaml` with your public key (replace the existing one)
-4. Copy the example secrets file and add your secrets:
    ```bash
-   cp hosts/<user>/secrets/secrets.yaml.example ~/.config/sops/secrets.yaml
+   cp hosts/<user>/secrets/secrets.yaml.example hosts/<user>/secrets/secrets.yaml
    # Edit the file and add your actual secrets
    ```
-5. Encrypt the secrets file:
+4. Encrypt the secrets file:
    ```bash
-   nix-shell -p sops --run "sops -e -i ~/.config/sops/secrets.yaml"
+   nix-shell -p sops --run "sops -e -i [...]/secrets/secrets.yaml"
    ```
 
 ### Keybindings
