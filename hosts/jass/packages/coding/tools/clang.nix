@@ -27,7 +27,7 @@ in
       pkgs.${versioned-clang}
     ]
     ++ lib.optionals cfg-clang.enable-tools [
-      pkgs.clang-tools
+      pkgs.${libllvm}.clang-tools
     ]
     ++ lib.optionals cfg-clang.enable-libllvm [
       pkgs.${libllvm}.libllvm
