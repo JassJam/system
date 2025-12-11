@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   boot = {
     # Bootloader SystemD
@@ -13,5 +14,7 @@
       useTmpfs = false;
       tmpfsSize = "30%";
     };
+
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 }

@@ -60,6 +60,9 @@ in
             "markdown" = true;
             "scminput" = false;
           };
+
+          "extensions.ignoreRecommendations": true,
+          "diffEditor.ignoreTrimWhitespace": false
         };
       };
     };
