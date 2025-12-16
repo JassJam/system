@@ -5,6 +5,8 @@
     ./gaming/citron.nix
     # snes emulator
     ./gaming/snes9x.nix
+    # minecraft modpack launcher
+    ./gaming/prismlauncher.nix
     # steam -> nixos-packages
     # ./gaming/steam.nix
 

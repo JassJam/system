@@ -46,7 +46,7 @@ in
       nvidiaPersistenced = true;
 
       # Use the NVidia open source kernel module
-      open = false;
+      open = true;
 
       # Enable the Nvidia settings menu,
       # accessible via `nvidia-settings`.

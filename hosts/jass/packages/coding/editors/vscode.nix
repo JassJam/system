@@ -61,8 +61,8 @@ in
             "scminput" = false;
           };
 
-          "extensions.ignoreRecommendations": true,
-          "diffEditor.ignoreTrimWhitespace": false
+          "extensions.ignoreRecommendations" = true;
+          "diffEditor.ignoreTrimWhitespace" = false;
         };
       };
     };

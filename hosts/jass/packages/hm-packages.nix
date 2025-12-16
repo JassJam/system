@@ -155,6 +155,9 @@
 
       # snes emulator
       snes9x.enable = true;
+
+      # minecraft modpack launcher
+      prismlauncher.enable = true;
     };
 
     other = {

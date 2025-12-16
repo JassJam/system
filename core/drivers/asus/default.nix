@@ -19,6 +19,11 @@ in
       enableUserService = true;
     };
 
+    # Enable supergfxd daemon for gpu switching
+    services.supergfxd = {
+      enable = true;
+    };
+
     systemd.services.asus-power-profile = {
       description = "Set ASUS power profile to battery-friendly on boot";
       after = [ "asusd.service" ];
@@ -29,8 +34,12 @@ in
       };
     };
 
+    services.hardware.openrgb.enable = true;
+
     environment.systemPackages = with pkgs; [
       asusctl
+      openrgb
+      openrgb-with-all-plugins
       (pkgs.writeShellScriptBin "asus-perf-toggle" (builtins.readFile ./asus-perf-toggle.sh))
     ];
 
