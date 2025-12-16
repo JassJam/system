@@ -1,10 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # bswpm essentials
-    bspwm
-    sxhkd
-
     # compositor
     picom
 
@@ -36,6 +32,7 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ./system
     ./secrets
     ./essentials
     ./players
@@ -45,6 +42,17 @@
     ./fun
     ./other
   ];
+
+  system = {
+    screen = {
+      bspwm = {
+        enable = true;
+      };
+      sxhkd = {
+        enable = true;
+      };
+    };
+  };
 
   essentials = {
     # catppuccin theming

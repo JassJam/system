@@ -1,0 +1,6 @@
+{
+  imports = [
+    ./wm
+    ./hotkey-daemon
+  ];
+}
