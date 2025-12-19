@@ -10,6 +10,7 @@
 
   drivers = {
     asus.enable = true;
+    amd.enable = true;
     nvidia = {
       enable = true;
       prime = {

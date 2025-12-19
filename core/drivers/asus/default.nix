@@ -42,9 +42,5 @@ in
       openrgb-with-all-plugins
       (pkgs.writeShellScriptBin "asus-perf-toggle" (builtins.readFile ./asus-perf-toggle.sh))
     ];
-
-    services.xserver.videoDrivers = [
-      "amdgpu"
-    ];
   };
 }
