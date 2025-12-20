@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./notetaker/nb.nix
+  ];
+}

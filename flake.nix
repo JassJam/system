@@ -35,9 +35,14 @@
     }@inputs:
     let
       system = builtins.currentSystem or "x86_64-linux";
-      
+
       # Helper function to create system configuration
-      mkSystem = { userName, hostName, fullName }:
+      mkSystem =
+        {
+          userName,
+          hostName,
+          fullName,
+        }:
         nixpkgs.lib.nixosSystem {
           system = {
             buildPlatform = system;
@@ -46,19 +51,31 @@
           };
 
           specialArgs = {
-            inherit inputs system userName hostName fullName;
+            inherit
+              inputs
+              system
+              userName
+              hostName
+              fullName
+              ;
             root = self;
           };
 
           modules = [
             ./core
             inputs.home-manager.nixosModules.home-manager
+            ./modules
 
             ./hosts/${userName}
           ];
         };
     in
     {
+      nixosModules = {
+        dotfiles = import ./.;
+      }
+      // ./modules import;
+
       nixosConfigurations = {
         jass = mkSystem {
           userName = "jass";

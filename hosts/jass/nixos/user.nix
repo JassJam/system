@@ -12,7 +12,6 @@
       "video"
       "input"
       "audio"
-      "docker"
     ];
     shell = pkgs.zsh;
   };

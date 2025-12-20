@@ -7,7 +7,6 @@
     ./services.nix
     ./hardware.nix
     ./networking.nix
-    ./drivers
     ./programs
   ];
 }

@@ -22,10 +22,6 @@
       };
     };
 
-    picom = {
-      enable = true;
-    };
-
     udev.enable = true;
     envfs.enable = true;
     dbus.enable = true;
