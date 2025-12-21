@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg-bspwm = config.system.window-manager.bspwm;
+  cfg-bspwm = config.system.x11.window-manager.bspwm;
 in
 {
-  options.system.window-manager = {
+  options.system.x11.window-manager = {
     bspwm = {
       enable = lib.mkEnableOption "Enable bspwm window manager.";
     };
@@ -28,6 +28,14 @@ in
         ".config/bspwm/bspwmrc" = {
           source = ./config.sh;
           executable = true;
+        };
+      };
+    };
+
+    services = {
+      xserver = {
+        windowManager.bspwm = {
+          enable = true;
         };
       };
     };

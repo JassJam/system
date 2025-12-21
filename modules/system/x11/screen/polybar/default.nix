@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg-polybar = config.system.screen.polybar;
+  cfg-polybar = config.system.x11.screen.polybar;
 in
 {
-  options.system.screen.polybar = {
+  options.system.x11.screen.polybar = {
     enable = lib.mkEnableOption "Enable Polybar status bar.";
     config = lib.mkOption {
       type = lib.types.path;

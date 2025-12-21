@@ -1,10 +1,8 @@
 {
   imports = [
     ./drivers
-    ./wm
+    ./x11
     ./audio
-    ./hotkey-daemon
-    ./screen
     ./virtualization
     ./notifications
     ./images

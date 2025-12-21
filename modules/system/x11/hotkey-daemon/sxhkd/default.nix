@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg-sxhkd = config.system.hotkey-daemon.sxhkd;
+  cfg-sxhkd = config.system.x11.hotkey-daemon.sxhkd;
 in
 {
-  options.system.hotkey-daemon.sxhkd = {
+  options.system.x11.hotkey-daemon.sxhkd = {
     enable = lib.mkEnableOption "Enable sxhkd hotkey daemon.";
   };
 

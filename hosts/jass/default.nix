@@ -14,14 +14,33 @@
   ];
 
   system = {
-    # bspwm window manager
-    window-manager.bspwm = {
+    x11 = {
       enable = true;
-    };
+      lockscreen = {
+        # xautolock screen locker
+        xautolock.enable = true;
 
-    # sxhkd hotkey daemon
-    hotkey-daemon.sxhkd = {
-      enable = true;
+        # xsecurelock screen locker
+        xsecurelock.enable = false;
+      };
+
+      # bspwm window manager
+      window-manager.bspwm = {
+        enable = true;
+      };
+
+      # sxhkd hotkey daemon
+      hotkey-daemon.sxhkd = {
+        enable = true;
+      };
+
+      screen = {
+        # picom compositor for window effects
+        picom.enable = true;
+
+        # polybar status bar
+        polybar.enable = true;
+      };
     };
 
     # dunst notification daemon
@@ -32,14 +51,6 @@
     # docker virtualization
     virtualization.docker = {
       enable = true;
-    };
-
-    screen = {
-      # picom compositor for window effects
-      picom.enable = true;
-
-      # polybar status bar
-      polybar.enable = true;
     };
 
     audio = {

@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg-picom = config.system.screen.picom;
+  cfg-picom = config.system.x11.screen.picom;
 in
 {
-  options.system.screen.picom = {
+  options.system.x11.screen.picom = {
     enable = lib.mkEnableOption "Enable picom compositor.";
     config = lib.mkOption {
       type = lib.types.path;
