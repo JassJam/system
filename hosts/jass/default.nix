@@ -21,7 +21,7 @@
         xautolock.enable = true;
 
         # xsecurelock screen locker
-        xsecurelock.enable = false;
+        xsecurelock.enable = true;
       };
 
       # bspwm window manager
@@ -212,8 +212,8 @@
   };
 
   chat = {
-    # xmpp client
-    gajim.enable = true;
+    # matrix client
+    fluffychat.enable = true;
     # corporate chat clients
     slack.enable = true;
     # general chat clients

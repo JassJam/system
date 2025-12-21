@@ -10,7 +10,7 @@ let
 in
 {
   options.chat.gajim = {
-    enable = lib.mkEnableOption "Gajim instant messenger";
+    enable = lib.mkEnableOption "Gajim instant XMPP messenger";
   };
 
   config = lib.mkIf cfg-gajim.enable {

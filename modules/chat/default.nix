@@ -1,5 +1,6 @@
 {
   imports = [
+    ./fluffychat.nix
     ./gajim.nix
     ./slack.nix
     ./slack.nix
