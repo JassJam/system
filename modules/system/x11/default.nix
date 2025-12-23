@@ -21,7 +21,6 @@ in
   ];
 
   config = lib.mkIf cfg-x11.enable {
-
     services = {
       xserver = {
         enable = true;

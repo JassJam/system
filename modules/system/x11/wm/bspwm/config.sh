@@ -12,7 +12,9 @@ polybar main &
 # Auto-lock after 10 minutes of inactivity
 xautolock -time 10 -locker xsecurelock &
 
-feh --bg-max ~/images/wallpapers/7183392_2612299_creepincrawl.png
+# feh --bg-max ~/images/wallpapers/7183392_2612299_creepincrawl.png
+feh --bg-fill ~/images/wallpapers/138070889_p10.jpg
+
 polybar &
 pgrep -x sxhkd > /dev/null || sxhkd &
 

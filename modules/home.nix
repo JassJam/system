@@ -33,6 +33,7 @@
       imports = [
         inputs.catppuccin.homeModules.catppuccin
         inputs.sops-nix.homeManagerModules.sops
+        inputs.niri-flake.homeModules.niri
       ];
     };
   };

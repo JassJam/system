@@ -7,10 +7,10 @@
 }:
 let
   cfg-rofi = config.essentials.window-switcher.rofi;
+
   cfg-catppuccin = config.essentials.theming.catppuccin;
   cfg-alacritty = config.essentials.terminal.alacritty;
   cfg-kitty = config.essentials.terminal.kitty;
-
   terminal-backend =
     if cfg-alacritty.enable then
       "${pkgs.alacritty}/bin/alacritty"

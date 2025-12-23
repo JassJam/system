@@ -16,6 +16,7 @@
   system = {
     x11 = {
       enable = true;
+
       lockscreen = {
         # xautolock screen locker
         xautolock.enable = true;
@@ -27,6 +28,7 @@
       # bspwm window manager
       window-manager.bspwm = {
         enable = true;
+        tuigreet-lockscreen = true;
       };
 
       # sxhkd hotkey daemon
@@ -42,6 +44,16 @@
         polybar.enable = true;
       };
     };
+
+    # wayland = {
+    #   enable = true;
+
+    #   # niri window manager
+    #   window-manager.niri = {
+    #     enable = true;
+    #     tuigreet-lockscreen = true;
+    #   };
+    # };
 
     # dunst notification daemon
     notifications.dunst = {

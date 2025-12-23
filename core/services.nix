@@ -1,16 +1,6 @@
 { pkgs, ... }:
 {
   services = {
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.bash}/bin/bash -c 'clear && ${pkgs.tuigreet}/bin/tuigreet --time --cmd startx'";
-          user = "greeter";
-        };
-      };
-    };
-
     udev.enable = true;
     envfs.enable = true;
     dbus.enable = true;
