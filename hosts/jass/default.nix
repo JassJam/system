@@ -14,46 +14,47 @@
   ];
 
   system = {
-    x11 = {
-      enable = true;
-
-      lockscreen = {
-        # xautolock screen locker
-        xautolock.enable = true;
-
-        # xsecurelock screen locker
-        xsecurelock.enable = true;
-      };
-
-      # bspwm window manager
-      window-manager.bspwm = {
-        enable = true;
-        tuigreet-lockscreen = true;
-      };
-
-      # sxhkd hotkey daemon
-      hotkey-daemon.sxhkd = {
-        enable = true;
-      };
-
-      screen = {
-        # picom compositor for window effects
-        picom.enable = true;
-
-        # polybar status bar
-        polybar.enable = true;
-      };
-    };
-
-    # wayland = {
+    # x11 = {
     #   enable = true;
 
-    #   # niri window manager
-    #   window-manager.niri = {
+    #   lockscreen = {
+    #     # xautolock screen locker
+    #     xautolock.enable = true;
+
+    #     # xsecurelock screen locker
+    #     xsecurelock.enable = true;
+    #   };
+
+    #   # bspwm window manager
+    #   window-manager.bspwm = {
     #     enable = true;
     #     tuigreet-lockscreen = true;
     #   };
+
+    #   # sxhkd hotkey daemon
+    #   hotkey-daemon.sxhkd = {
+    #     enable = true;
+    #   };
+
+    #   screen = {
+    #     # picom compositor for window effects
+    #     picom.enable = true;
+
+    #     # polybar status bar
+    #     polybar.enable = true;
+    #   };
     # };
+
+    wayland = {
+      enable = true;
+
+      # niri window manager
+      window-manager.niri = {
+        enable = true;
+        tuigreet-lockscreen = true;
+        screencast = true;
+      };
+    };
 
     # dunst notification daemon
     notifications.dunst = {
@@ -91,10 +92,10 @@
     };
 
     images = {
-      # maim screenshot utility
-      screenshot.maim = {
-        enable = true;
-      };
+      # # maim screenshot utility
+      # screenshot.maim = {
+      #   enable = true;
+      # };
 
       # feh wallpaper setter
       wallpaper.feh = {
