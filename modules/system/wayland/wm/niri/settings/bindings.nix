@@ -44,6 +44,9 @@ in
   # Toggle fullscreen
   "Mod+F".action.fullscreen-window = { };
   "Mod+Shift+F".action.toggle-windowed-fullscreen = { };
+  
+  "Mod+Ctrl+F".action.set-window-height = "100%";
+  "Mod+Alt+F".action.set-window-width = "100%";
 
   # Toggle floating
   # "Mod+Ctrl+Space".action.toggle-floating = { };

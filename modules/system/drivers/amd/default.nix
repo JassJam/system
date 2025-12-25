@@ -18,5 +18,12 @@ in
     ];
 
     hardware.amdgpu.overdrive.ppfeaturemask = "0xffffffff";
+
+    boot.kernelParams = [
+      # Enable all power features
+      "amdgpu.ppfeaturemask=0xffffffff"
+      # Enable GPU recovery
+      "amdgpu.gpu_recovery=1"
+    ];
   };
 }

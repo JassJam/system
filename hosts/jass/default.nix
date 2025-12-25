@@ -1,6 +1,7 @@
 {
   inputs,
   system,
+  config,
   userName,
   hostName,
   fullName,
@@ -52,7 +53,35 @@
       window-manager.niri = {
         enable = true;
         tuigreet-lockscreen = true;
+        #
         screencast = true;
+
+        # waybar status bar
+        startup-commands = [
+          {
+            command = [
+              "waybar"
+            ];
+          }
+        ];
+      };
+
+      screen = {
+        # waybar status bar
+        waybar.enable = true;
+
+        # wpaperd wallpaper daeom
+        wpaperd = {
+          enable = true;
+          settings = {
+            eDP-1 = {
+              path = "~/images/wallpapers";
+              apply-shadow = true;
+              duration = "10m";
+              sorting = "random";
+            };
+          };
+        };
       };
     };
 
@@ -97,10 +126,10 @@
       #   enable = true;
       # };
 
-      # feh wallpaper setter
-      wallpaper.feh = {
-        enable = true;
-      };
+      # # feh wallpaper setter
+      # wallpaper.feh = {
+      #   enable = true;
+      # };
     };
 
     other = {

@@ -37,6 +37,18 @@ in
       description = "Path to a Nix file defining Niri key settings.";
       default = ./settings/default.nix;
     };
+
+    status-bar = lib.mkOption {
+      type = lib.types.nullOr lib.types.str;
+      description = "Status bar to use with Niri.";
+      default = null;
+    };
+
+    startup-commands = lib.mkOption {
+      type = lib.types.listOf lib.types.attrs;
+      description = "Commands to run on Niri startup.";
+      default = [ ];
+    };
   };
 
   config = lib.mkIf cfg-niri.enable {
@@ -45,17 +57,21 @@ in
       {
         programs.niri = {
           enable = true;
-          settings = import cfg-niri.settings {
-            inherit
-              lib
-              config
-              pkgs
-              inputs
-              fullName
-              userName
-              system
-              ;
-          };
+          settings =
+            import cfg-niri.settings {
+              inherit
+                lib
+                config
+                pkgs
+                inputs
+                fullName
+                userName
+                system
+                ;
+            }
+            // {
+              spawn-at-startup = cfg-niri.startup-commands;
+            };
         };
 
         home.packages =

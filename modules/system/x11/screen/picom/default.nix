@@ -28,5 +28,9 @@ in
         ".config/picom/picom.conf".source = cfg-picom.config;
       };
     };
+
+    services.picom = {
+      enable = true;
+    };
   };
 }

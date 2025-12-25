@@ -1,0 +1,114 @@
+* {
+    font-family: "Adwaita Mono Nerd Font", sans-serif;
+    font-size: 9pt;
+    min-height: 27px;
+}
+
+window#waybar {
+    all: unset;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 0 transparent;
+    color: #DCD7BA;
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: transparent;
+}
+
+tooltip {
+    background-color: #1F1F28;
+    border-radius: 8px;
+}
+
+#clock,
+.modules-left,
+.modules-right {
+    background-color: #1F1F28;
+    border-radius: 8pt;
+    /*	color: #DCD7BA;	*/
+    color: #FB48C4
+}
+
+.modules-left,
+.modules-right {
+    padding: 0 0.5em;
+}
+
+#workspaces {
+    font-weight: bold;
+    font-size: 8pt;
+}
+
+#workspaces button {
+    padding: 0 0.25em;
+    /*margin: 0.5 -0.65em*/
+}
+
+#workspaces button.visible {
+    color: #DCD7BA;
+}
+
+#workspaces button.empty {
+    color: #727169;
+}
+
+#workspaces button.active {
+    background: transparent;
+    color: #DCD7BA;
+}
+
+#clock {
+    padding: 0 0.5em;
+    font-weight: bold;
+    font-size: 8pt;
+    /*color: #DCD7BA;*/
+    color: #FB48C4
+}
+
+#mpris {
+    padding: 0 1em;
+    font-weight: bold;
+    font-size: 8pt;
+    color: #DCD7BA;
+}
+
+/* #battery.charging { */
+/* 	color: green; */
+/* } */
+
+#tray {
+    font-size: 8pt;
+    padding: 0 0.5em;
+}
+
+#custom-notifications {
+    font-size: 8pt;
+    padding: 0 0.5em;
+}
+
+#battery,
+#network,
+#wireplumber {
+    font-size: 8pt;
+    padding: 0 0.70em;
+    background: #1F1F28;
+}
+
+#battery.warning {
+    color: yellow;
+}
+
+#battery.critical {
+    color: red;
+}

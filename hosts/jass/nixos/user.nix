@@ -10,6 +10,7 @@
       "scanner"
       "lp"
       "video"
+      "render"
       "input"
       "audio"
     ];

@@ -28,9 +28,5 @@ in
         ".config/polybar/config.ini".source = cfg-polybar.config;
       };
     };
-
-    services.picom = {
-      enable = true;
-    };
   };
 }
