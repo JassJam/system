@@ -1,5 +1,45 @@
 { pkgs, ... }:
 [
+  {
+    geometry-corner-radius =
+      let
+        radius = 12.0;
+      in
+      {
+        bottom-left = radius;
+        bottom-right = radius;
+        top-left = radius;
+        top-right = radius;
+      };
+    clip-to-geometry = true;
+    draw-border-with-background = false;
+  }
+
+  {
+    matches = [
+      { is-floating = true; }
+    ];
+    shadow.enable = true;
+  }
+
+  {
+    focus-ring = {
+      active.color = "#be3cd5bc";
+      inactive.color = "#3d1255bc";
+    };
+    border = {
+      active.color = "#be3cd5bc";
+      inactive.color = "#3d1255bc";
+    };
+    shadow = {
+      color = "rgba(141, 72, 136, 0.26)";
+    };
+    tab-indicator = {
+      active.color = "#be3cd5bc";
+      inactive.color = "#3d1255bc";
+    };
+  }
+
   # floating windows class
   {
     matches = [
