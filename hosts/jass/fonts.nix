@@ -17,6 +17,7 @@
       mplus-outline-fonts.githubRelease
       unifont
       unifont_upper
+      wqy_zenhei
     ];
   };
 }

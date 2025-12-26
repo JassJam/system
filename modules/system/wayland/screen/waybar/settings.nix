@@ -14,7 +14,7 @@
       "mpris"
     ];
     "modules-center" = [
-      "niri/window"
+      "clock"
     ];
     "modules-right" = [
       "group/info"
@@ -76,27 +76,28 @@
       "format" = "  {usage}%";
     };
     "clock" = {
-      "interval" = 1;
-      "format" = "{=%I=%M %p}";
-      "format-alt" = "{=%d/%m/%y %I=%M=%S %p}";
-      "tooltip-format" = "<tt><small>{calendar}</small></tt>";
+      "format" = " {:%H:%M} ";
+      "format-alt" = " {:L%A, %B %d, %Y (%R)} ";
+      "tooltip-format" = "\n<span size='9pt' font='JetBrainsMono Nerd Font'>{calendar}</span>";
       "calendar" = {
-        "mode" = "month";
+        "mode" = "year";
         "mode-mon-col" = 3;
         "weeks-pos" = "right";
         "on-scroll" = 1;
         "format" = {
           "months" = "<span color='#ffead3'><b>{}</b></span>";
           "days" = "<span color='#ecc6d9'><b>{}</b></span>";
-          "weeks" = "";
+          "weeks" = "<span color='#99ffdd'><b>W{}</b></span>";
           "weekdays" = "<span color='#ffcc66'><b>{}</b></span>";
           "today" = "<span color='#ff6699'><b><u>{}</u></b></span>";
         };
-        "actions" = {
-          "on-click-right" = "mode";
-          "on-scroll-up" = "shift_up";
-          "on-scroll-down" = "shift_down";
-        };
+      };
+      "actions" = {
+        "on-click-right" = "mode";
+        "on-click-forward" = "tz_up";
+        "on-click-backward" = "tz_down";
+        "on-scroll-up" = "shift_up";
+        "on-scroll-down" = "shift_down";
       };
     };
     "tray" = {
