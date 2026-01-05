@@ -9,6 +9,8 @@
     ./gaming/prismlauncher.nix
     # steam
     ./gaming/steam.nix
+    # celeste olympus mod launcher
+    ./gaming/olympus.nix
 
     # other
     # p2p soulseek client

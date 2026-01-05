@@ -255,7 +255,7 @@
 
   chat = {
     # matrix client
-    fluffychat.enable = true;
+    element.enable = true;
     # corporate chat clients
     slack.enable = true;
     # general chat clients
@@ -276,6 +276,9 @@
 
       # steam
       steam.enable = true;
+
+      # celeste olympus mod launcher
+      olympus.enable = true;
     };
 
     other = {
@@ -308,5 +311,8 @@
       enable = true;
       use-secrets = true;
     };
+
+    # vpn services
+    openfortivpn.enable = true;
   };
 }

@@ -12,5 +12,8 @@
 
     # git
     ./git.nix
+
+    # vpn services
+    ./openfortivpn.nix
   ];
 }
