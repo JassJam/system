@@ -156,8 +156,12 @@
   };
 
   essentials = {
-    # catppuccin theming
-    theming.catppuccin.enable = true;
+    # theming
+    theming = {
+      catppuccin.enable = true;
+      gtk.enable = true;
+      # qt.enable = true;
+    };
 
     # yazi file manager
     file-manager = {

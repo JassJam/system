@@ -2,6 +2,8 @@
   imports = [
     # themings
     ./catppuccin.nix
+    ./gtk.nix
+    ./qt.nix
 
     # window switchers
     ./rofi.nix
