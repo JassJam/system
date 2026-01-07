@@ -169,6 +169,9 @@
         enable = true;
         # gitgui = true;
       };
+
+      # nautilus GUI file manager for file picker dialogs
+      nautilus.enable = true;
     };
 
     # kitty terminal with zsh

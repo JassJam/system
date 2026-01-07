@@ -81,14 +81,14 @@ in
           ]
           ++ lib.optionals cfg-niri.tuigreet-lockscreen [
             tuigreet
-          ]
-          ++ lib.optionals cfg-niri.screencast [
-            xdg-desktop-portal-gnome
-            xdg-desktop-portal-wlr
-            xdg-desktop-portal-gtk
-            xdg-desktop-portal
           ];
       };
+
+    xdg.portal = lib.mkIf cfg-niri.screencast {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+      config.niri.default = [ "gnome" "gtk" ];
+    };
 
     services = {
       greetd = lib.mkIf cfg-niri.tuigreet-lockscreen {

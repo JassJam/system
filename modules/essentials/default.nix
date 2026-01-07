@@ -17,6 +17,7 @@
 
     # file managers
     ./yazi.nix
+    ./nautilus.nix
     ./gitui.nix
 
     # disk usage analyzers
