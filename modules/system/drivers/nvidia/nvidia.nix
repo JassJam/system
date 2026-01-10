@@ -43,6 +43,7 @@ in
       # Fine-grained power management. Keep disabled for gaming performance
       powerManagement.finegrained = false;
 
+      # Keep NVIDIA driver always loaded
       nvidiaPersistenced = true;
 
       open = true;
@@ -54,6 +55,8 @@ in
     boot.kernelParams = [
       "nvidia-drm.modeset=1"
       "nvidia-drm.fbdev=1"
+      # Preserve video memory allocations across suspend/resume
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
     ];
   };
 }
