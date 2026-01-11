@@ -34,7 +34,7 @@ in
             ms-vscode.cpptools
             ms-vscode.cpptools-extension-pack
             ms-vscode.cmake-tools
-            # xmake-vscode
+            xmake-vscode
             mesonbuild.mesonbuild
 
             # Utilities
