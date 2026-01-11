@@ -106,6 +106,14 @@ in
       };
     };
 
+    environment.sessionVariables = {
+      ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+      QT_QPA_PLATFORM = "wayland";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      MOZ_ENABLE_WAYLAND = "1";
+      XDG_SESSION_TYPE = "wayland";
+    };
+
     # always start niri-session for the user if no lockscreen is used
     systemd.user.services.niri-session = lib.mkIf has-no-lockscreen {
       description = "Niri session for greetd/tuigreet";
