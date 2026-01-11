@@ -132,6 +132,21 @@
       # };
     };
 
+    cursor = {
+      # catppuccin = {
+      #   enable = true;
+      # };
+      custom = {
+        enable = true;
+        type = "compiled";
+        cursorPath = ./cursors/reisen;
+        cursorName = "reisen";
+        themeName = "reisen";
+        displaySize = 128;
+        autoUpscale = true;
+      };
+    };
+
     other = {
       # clipboard management with xclip
       xclip = {
@@ -321,5 +336,13 @@
 
     # vpn services
     openfortivpn.enable = true;
+  };
+
+  home-manager.users.${userName} = {
+    programs.niri = {
+      settings.cursor = {
+        size = 128;
+      };
+    };
   };
 }
