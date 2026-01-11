@@ -7,6 +7,7 @@
     ./virtualization
     ./notifications
     ./images
+    ./cursor
     ./other
   ];
 }

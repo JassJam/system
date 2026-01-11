@@ -20,7 +20,10 @@ in
         enable = true;
       };
 
-      catppuccin.btop = cfg-catppuccin;
+      catppuccin.btop = {
+        enable = cfg-catppuccin.enable;
+        flavor = cfg-catppuccin.flavor;
+      };
     };
   };
 }

@@ -68,7 +68,10 @@ in
         };
       };
 
-      catppuccin.vesktop = cfg-catppuccin;
+      catppuccin.vesktop = {
+        enable = cfg-catppuccin.enable;
+        flavor = cfg-catppuccin.flavor;
+      };
     };
   };
 }

@@ -28,7 +28,10 @@ in
         };
       };
 
-      catppuccin.alacritty = cfg-catppuccin;
+      catppuccin.alacritty = {
+        enable = cfg-catppuccin.enable;
+        flavor = cfg-catppuccin.flavor;
+      };
 
       sessionVariables.TERMINAL = "${pkgs.kitty}/bin/alacritty";
     };

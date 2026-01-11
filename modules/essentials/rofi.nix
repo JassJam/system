@@ -31,7 +31,10 @@ in
         terminal = terminal-backend;
       };
 
-      catppuccin.rofi = cfg-catppuccin;
+      catppuccin.rofi = {
+        enable = cfg-catppuccin.enable;
+        flavor = cfg-catppuccin.flavor;
+      };
     };
   };
 }

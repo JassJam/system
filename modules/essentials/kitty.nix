@@ -35,7 +35,10 @@ in
         };
       };
 
-      catppuccin.kitty = cfg-catppuccin;
+      catppuccin.kitty = {
+        enable = cfg-catppuccin.enable;
+        flavor = cfg-catppuccin.flavor;
+      };
 
       home.sessionVariables.TERMINAL = "${pkgs.kitty}/bin/kitty";
     };

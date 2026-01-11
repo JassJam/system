@@ -21,6 +21,25 @@ in
       default = "mocha";
       description = "Choose your Catppuccin flavor.";
     };
+    accent = lib.mkOption {
+      type = lib.types.enum [
+        "rosewater"
+        "flamingo"
+        "pink"
+        "mauve"
+        "red"
+        "maroon"
+        "peach"
+        "yellow"
+        "green"
+        "teal"
+        "blue"
+        "sky"
+        "lavender"
+      ];
+      default = "mauve";
+      description = "Choose your Catppuccin accent color.";
+    };
   };
 
   config = lib.mkIf cfg-catppuccin.enable {
@@ -28,12 +47,7 @@ in
       catppuccin = {
         enable = true;
         flavor = cfg-catppuccin.flavor;
-      };
-
-      catppuccin.cursors = {
-        enable = true;
-        accent = "mauve";
-        flavor = "frappe";
+        accent = cfg-catppuccin.accent;
       };
     };
   };

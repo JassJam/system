@@ -68,7 +68,10 @@ in
         '';
       };
 
-      catppuccin.zsh-syntax-highlighting = cfg-catppuccin;
+      catppuccin.zsh-syntax-highlighting = {
+        enable = cfg-catppuccin.enable;
+        flavor = cfg-catppuccin.flavor;
+      };
     };
   };
 }
