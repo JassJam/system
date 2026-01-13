@@ -133,18 +133,18 @@
     };
 
     cursor = {
-      # catppuccin = {
-      #   enable = true;
-      # };
-      custom = {
+      catppuccin = {
         enable = true;
-        type = "compiled";
-        cursorPath = ./cursors/reisen;
-        cursorName = "reisen";
-        themeName = "reisen";
-        displaySize = 128;
-        autoUpscale = true;
       };
+      # custom = {
+      #   enable = true;
+      #   type = "compiled";
+      #   cursorPath = ./cursors/reisen;
+      #   cursorName = "reisen";
+      #   themeName = "reisen";
+      #   displaySize = 128;
+      #   autoUpscale = true;
+      # };
     };
 
     other = {
@@ -259,6 +259,7 @@
         enable = true;
         enable-tools = true;
         enable-libllvm = true;
+        enable-lldb = true;
       };
       cmake.enable = true;
       ninja.enable = true;
@@ -272,6 +273,12 @@
 
       # mockoon
       mockoon.enable = true;
+
+      xmake = {
+        enable = true;
+        version = "3.0.6";
+        hash = "sha256-uQeq9VMwvU4PnY+w+6Z/qivTIKPgSxuQu6bZgKn/AQM=";
+      };
     };
   };
 
@@ -338,11 +345,11 @@
     openfortivpn.enable = true;
   };
 
-  home-manager.users.${userName} = {
-    programs.niri = {
-      settings.cursor = {
-        size = 128;
-      };
-    };
-  };
+  # home-manager.users.${userName} = {
+  #   programs.niri = {
+  #     settings.cursor = {
+  #       size = 128;
+  #     };
+  #   };
+  # };
 }
