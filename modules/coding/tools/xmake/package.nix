@@ -1,14 +1,21 @@
-{ pkgs, ... }:
-
+{
+  pkgs,
+  version,
+  hash,
+  ...
+}:
+let
+  ver = version;
+in
 pkgs.stdenv.mkDerivation rec {
   pname = "xmake";
-  version = "3.0.4";
+  version = "${ver}";
 
   src = pkgs.fetchFromGitHub {
     owner = "xmake-io";
     repo = "xmake";
-    rev = "v${version}";
-    hash = "sha256-0Hh7XqKAt0yrg1GejEZmKpY3c8EvK7Z2eBS8GNaxYlg=";
+    rev = "v${ver}";
+    hash = hash;
     fetchSubmodules = true;
   };
 
@@ -29,7 +36,7 @@ pkgs.stdenv.mkDerivation rec {
     export CFLAGS="-I${pkgs.ncurses.dev}/include"
     export LDFLAGS="-L${pkgs.ncurses}/lib"
     export PKG_CONFIG_PATH="${pkgs.ncurses.dev}/lib/pkgconfig"
-    
+
     # Run the configure script
     bash ./configure
   '';
@@ -43,12 +50,17 @@ pkgs.stdenv.mkDerivation rec {
     # Install to the nix store output
     mkdir -p $out/bin $out/share/xmake
     make install PREFIX=$out
-    
+
     # Wrap the binary to ensure ncurses is in the runtime path
     wrapProgram $out/bin/xmake \
       --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.ncurses ]} \
       --set TERMINFO ${pkgs.ncurses}/share/terminfo \
-      --prefix LD_LIBRARY_PATH : ${pkgs.lib.makeLibraryPath [ pkgs.ncurses pkgs.readline ]}
+      --prefix LD_LIBRARY_PATH : ${
+        pkgs.lib.makeLibraryPath [
+          pkgs.ncurses
+          pkgs.readline
+        ]
+      }
   '';
 
   meta = with pkgs.lib; {

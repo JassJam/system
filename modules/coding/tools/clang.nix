@@ -16,6 +16,7 @@ in
     enable = lib.mkEnableOption "Install Clang/LLVM compiler for C/C++ development.";
     enable-tools = lib.mkEnableOption "Install Clang tools (clang-tidy, clang-format, etc).";
     enable-libllvm = lib.mkEnableOption "Install LLVM libraries.";
+    enable-lldb = lib.mkEnableOption "Install LLDB debugger.";
     version = lib.mkOption {
       type = lib.types.str;
       default = "20";
@@ -33,6 +34,9 @@ in
       ]
       ++ lib.optionals cfg-clang.enable-libllvm [
         pkgs.${libllvm}.libllvm
+      ]
+      ++ lib.optionals cfg-clang.enable-lldb [
+        pkgs.${libllvm}.lldb
       ];
     };
   };

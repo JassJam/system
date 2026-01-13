@@ -17,5 +17,6 @@
     ./tools/mockoon.nix
     ./tools/ninja.nix
     ./tools/valgrind.nix
+    ./tools/xmake
   ];
 }
