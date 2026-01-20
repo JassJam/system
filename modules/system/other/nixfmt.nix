@@ -20,7 +20,7 @@ in
   config = lib.mkIf cfg-nixfmt.enable {
     home-manager.users.${userName}.home = {
       packages = with pkgs; [
-        nixfmt-rfc-style
+        nixfmt
       ];
     };
   };

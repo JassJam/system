@@ -229,10 +229,9 @@
       # vscode, text editor
       vscode.enable = true;
 
-      # c++ ide
-      jetbrains.clion = true;
+      jetbrains.toolbox = true;
       # java ide
-      jetbrains.idea-community = true;
+      jetbrains.idea = true;
       # web ide
       jetbrains.webstorm = true;
     };
