@@ -6,6 +6,6 @@
     ./slack.nix
     ./slack.nix
     ./telegram.nix
-    ./vesktop.nix
+    ./nixcord.nix
   ];
 }
