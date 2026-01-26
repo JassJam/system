@@ -94,6 +94,9 @@
     virtualization.docker = {
       enable = true;
     };
+    virtualization.libvirtd = {
+      enable = true;
+    };
 
     audio = {
       # pamixer volume control utility
@@ -288,7 +291,7 @@
     slack.enable = true;
     # general chat clients
     telegram.enable = true;
-    vesktop.enable = true;
+    nixcord.vesktop.enable = true;
   };
 
   fun = {
