@@ -28,7 +28,7 @@ in
     shellAliases = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
       default = {
-        rbld = "nixos-rebuild switch --flake ~/system#${userName} --sudo";
+        rbld = "nixos-rebuild switch --flake ~/projects/system#${userName} --sudo";
 
         # Clipboard aliases
         clip = "wl-copy"; # pipe anything to clipboard

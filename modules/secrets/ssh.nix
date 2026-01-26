@@ -40,13 +40,13 @@ in
 
             "github.com" = {
               user = "git";
-              identityFile = "~/.ssh/git-${userName}";
+              identityFile = "~/.ssh/github-${userName}";
               identitiesOnly = true;
             };
 
             "codeberg.org" = {
               user = "git";
-              identityFile = "~/.ssh/git-${userName}";
+              identityFile = "~/.ssh/codeberg-${userName}";
               identitiesOnly = true;
             };
           };

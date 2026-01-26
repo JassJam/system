@@ -29,6 +29,9 @@ in
         vesktop = {
           enable = true;
           package = pkgs.vesktop;
+          settings = {
+            arRPC = true;
+          };
         };
 
         config.plugins = {
@@ -37,6 +40,7 @@ in
           betterFolders.enable = true;
           biggerStreamPreview.enable = true;
           ClearURLs.enable = true;
+          CustomRPC.enable = true;
           consoleJanitor.enable = true;
           copyFileContents.enable = true;
           copyStickerLinks.enable = true;
