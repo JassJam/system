@@ -72,10 +72,5 @@ in
         };
       };
     };
-
-    # catppuccin.vesktop = {
-    #   enable = cfg-catppuccin.enable;
-    #   flavor = cfg-catppuccin.flavor;
-    # };
   };
 }
