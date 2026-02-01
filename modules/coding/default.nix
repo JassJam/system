@@ -12,8 +12,10 @@
 
     ./tools/clang.nix
     ./tools/cmake.nix
+    ./tools/conan.nix
     ./tools/direnv.nix
     ./tools/insomnia.nix
+    ./tools/meson.nix
     ./tools/mockoon.nix
     ./tools/ninja.nix
     ./tools/valgrind.nix

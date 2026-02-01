@@ -266,6 +266,8 @@
       cmake.enable = true;
       ninja.enable = true;
       valgrind.enable = true;
+      conan.enable = true;
+      meson.enable = true;
 
       # direnv
       direnv.enable = true;
@@ -291,6 +293,7 @@
     slack.enable = true;
     # general chat clients
     telegram.enable = true;
+    whatsapp.enable = true;
     nixcord.vesktop.enable = true;
   };
 

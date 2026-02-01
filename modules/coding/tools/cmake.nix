@@ -17,6 +17,8 @@ in
     home-manager.users.${userName}.home = {
       packages = [
         pkgs.cmake
+        pkgs.gnumake
+        pkgs.pkg-config
       ];
     };
   };
