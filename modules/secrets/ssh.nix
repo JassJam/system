@@ -18,12 +18,12 @@ in
     home-manager.users.${userName} =
       { config, ... }:
       {
-        sops.templates."ssh-music-server-config" = lib.mkIf cfg-ssh.enable-music-server {
+        sops.templates."ssh-n-server-config" = lib.mkIf cfg-ssh.enable-music-server {
           content = ''
-            Host music-server
-              HostName ${config.sops.placeholder."ssh/music_server/hostname"}
-              User ${config.sops.placeholder."ssh/music_server/user"}
-              IdentityFile ~/.ssh/music-server
+            Host n-server
+              HostName ${config.sops.placeholder."ssh/n-server/hostname"}
+              User ${config.sops.placeholder."ssh/n-server/user"}
+              IdentityFile ~/.ssh/n-server
               IdentitiesOnly yes
           '';
         };
@@ -55,7 +55,7 @@ in
             AddKeysToAgent yes
           ''
           + lib.optionalString cfg-ssh.enable-music-server ''
-            Include ${config.sops.templates."ssh-music-server-config".path}
+            Include ${config.sops.templates."ssh-n-server-config".path}
           '';
         };
       };

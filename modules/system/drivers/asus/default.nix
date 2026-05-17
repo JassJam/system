@@ -16,8 +16,9 @@ in
     # Enable asusd daemon
     services.asusd = {
       enable = true;
-      enableUserService = true;
     };
+
+    systemd.user.services.asusd-user.enable = true;
 
     # Enable supergfxd daemon for gpu switching
     services.supergfxd = {
@@ -30,7 +31,7 @@ in
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
         Type = "oneshot";
-        ExecStart = "${pkgs.asusctl}/bin/asusctl profile -P Quiet";
+        ExecStart = "${pkgs.asusctl}/bin/asusctl profile set Quiet";
       };
     };
 
@@ -42,5 +43,9 @@ in
       openrgb-with-all-plugins
       (pkgs.writeShellScriptBin "asus-perf-toggle" (builtins.readFile ./asus-perf-toggle.sh))
     ];
+
+    # systemd.tmpfiles.rules = [
+    #   "d /etc/asusd 0755 root root -"
+    # ];
   };
 }

@@ -87,10 +87,10 @@
       // ./modules import;
 
       nixosConfigurations = {
-        jass = mkSystem {
-          userName = "jass";
+        jam = mkSystem {
+          userName = "jam";
           hostName = "Jam";
-          fullName = "Jass";
+          fullName = "Jam";
         };
       };
     };

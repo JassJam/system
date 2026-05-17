@@ -8,11 +8,11 @@
         age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
 
         secrets = {
-          "ssh/music_server/hostname" = { };
-          "ssh/music_server/user" = { };
+          "ssh/n-server/hostname" = { };
+          "ssh/n-server/user" = { };
 
-          "github/username" = { };
-          "github/email" = { };
+          "git/username" = { };
+          "git/email" = { };
         };
       };
     };

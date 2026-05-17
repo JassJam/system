@@ -1,9 +1,9 @@
 keys:
-  - &jass age1knch6h8rpwe8n7zkjhmekvc26vhjza29rzmpp4y5wg6avdvwv4hqacsran
+  - &jam age1y957g6tsk97rhah4ggx0d558wfxtg7e2sv0ghhlg2s8804k2xf0qk3f947
 
 creation_rules:
-  - path_regex: hosts/jass/secrets/secrets\.yaml$
+  - path_regex: hosts/jam/secrets/secrets\.yaml$
     key_groups:
       - age:
-          - *jass
+          - *jam
 

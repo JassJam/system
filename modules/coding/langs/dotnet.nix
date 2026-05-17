@@ -32,11 +32,17 @@ in
   config = lib.mkIf cfg-dotnet.enable {
     home-manager.users.${userName}.home = {
       packages =
-        lib.optionals dotnet-has-sdk [
-          pkgs."${dotnet-sdk-version}"
-        ]
-        ++ lib.optionals dotnet-has-runtime [
-          pkgs."${dotnet-runtime-version}"
+        let
+          dotnetPkgs =
+            lib.optionals dotnet-has-sdk [
+              pkgs."${dotnet-sdk-version}"
+            ]
+            ++ lib.optionals dotnet-has-runtime [
+              pkgs."${dotnet-runtime-version}"
+            ];
+        in
+        lib.optionals (dotnetPkgs != [ ]) [
+          (pkgs.dotnetCorePackages.combinePackages dotnetPkgs)
         ];
     };
   };

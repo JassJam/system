@@ -37,8 +37,8 @@ in
         sops.templates."gitconfig-user" = lib.mkIf cfg-git.use-secrets {
           content = ''
             [user]
-              name = ${config.sops.placeholder."github/username"}
-              email = ${config.sops.placeholder."github/email"}
+              name = ${config.sops.placeholder."git/username"}
+              email = ${config.sops.placeholder."git/email"}
           '';
         };
 
@@ -70,6 +70,9 @@ in
 
             url."ssh://git@codeberg.org/".insteadOf = "https://codeberg.org/";
             url."ssh://git@github.com/".insteadOf = "https://github.com/";
+            safe = [
+              { directory = "/etc/nixos/system"; }
+            ];
           };
         };
       };

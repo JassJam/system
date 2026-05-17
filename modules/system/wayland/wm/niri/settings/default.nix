@@ -61,4 +61,16 @@ in
       system
       ;
   };
+
+  input = import ./input.nix {
+    inherit
+      lib
+      config
+      pkgs
+      inputs
+      fullName
+      userName
+      system
+      ;
+  };
 }

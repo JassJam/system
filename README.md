@@ -25,7 +25,7 @@
 
 ### Usage
 * Packages are managed via home-manager and flakes.
-* To apply changes, run `rbld` (or `nixos-rebuild switch --flake ~/system#<userName> --sudo`).
+* To apply changes, run `rbld` (or `nixos-rebuild switch --flake ~/projects/system#<userName> --sudo`).
 
 ### Secrets Management (sops-nix)
 
@@ -37,9 +37,9 @@
    ```
 2. Copy the public key from the output
 3. Update `.sops.yaml` with your public key (replace the existing one)
+4. Edit the file and add your actual secrets
    ```bash
    cp hosts/<user>/secrets/secrets.yaml.example hosts/<user>/secrets/secrets.yaml
-   # Edit the file and add your actual secrets
    ```
 4. Encrypt the secrets file:
    ```bash

@@ -20,6 +20,7 @@ in
       programs.yazi = {
         enable = true;
         enableZshIntegration = cfg-zsh.enable;
+        shellWrapperName = "y";
 
         settings = {
           font = {
