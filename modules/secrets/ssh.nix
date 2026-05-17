@@ -37,18 +37,6 @@ in
               serverAliveInterval = 60;
               serverAliveCountMax = 3;
             };
-
-            "github.com" = {
-              user = "git";
-              identityFile = "~/.ssh/github-${userName}";
-              identitiesOnly = true;
-            };
-
-            "codeberg.org" = {
-              user = "git";
-              identityFile = "~/.ssh/codeberg-${userName}";
-              identitiesOnly = true;
-            };
           };
 
           extraConfig = ''
