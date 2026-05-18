@@ -43,14 +43,9 @@
   # floating windows class
   {
     matches = [
-      { app-id = "floating"; }
+      { app-id = "^floating-.*$"; }
     ];
     open-floating = true;
-    default-floating-position = {
-      x = 0;
-      y = 0;
-      relative-to = "top";
-    };
     default-window-height = {
       proportion = 0.6;
     };
@@ -71,6 +66,21 @@
     default-floating-position = {
       x = 32;
       y = 32;
+      relative-to = "bottom-right";
+    };
+  }
+
+  # steam notifications
+  {
+    matches = [
+      {
+        app-id = "steam";
+        title = "^notificationtoasts_.*_desktop$";
+      }
+    ];
+    default-floating-position = {
+      x = 3;
+      y = 3;
       relative-to = "bottom-right";
     };
   }

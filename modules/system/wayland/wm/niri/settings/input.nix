@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   mouse = {
-    accel-speed = 0.2;
+    accel-speed = 0.01;
   };
 }
