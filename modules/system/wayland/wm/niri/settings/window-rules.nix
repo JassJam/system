@@ -79,8 +79,8 @@
       }
     ];
     default-floating-position = {
-      x = 3;
-      y = 3;
+      x = 0;
+      y = 2;
       relative-to = "bottom-right";
     };
   }

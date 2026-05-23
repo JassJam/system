@@ -79,6 +79,7 @@
               apply-shadow = true;
               duration = "10m";
               sorting = "random";
+              mode = "fit";
             };
           };
         };
@@ -124,6 +125,10 @@
     };
 
     images = {
+      image-viewer.qview = {
+        enable = true;
+      };
+
       # # maim screenshot utility
       # screenshot.maim = {
       #   enable = true;
@@ -234,9 +239,9 @@
 
       jetbrains.toolbox = true;
       # java ide
-#     jetbrains.idea = true;
+      #     jetbrains.idea = true;
       # web ide
-#     jetbrains.webstorm = true;
+      #     jetbrains.webstorm = true;
     };
 
     langs = {
@@ -245,10 +250,10 @@
       powershell.enable = true;
 
       # java
- #    java.enable = true;
+      #    java.enable = true;
 
       # nodejs
- #    nodejs.enable = true;
+      #    nodejs.enable = true;
 
       # # rust compiler + cargo
       # rust.compiler = true;
@@ -300,7 +305,7 @@
   fun = {
     gaming = {
       # switch emulator
-#     citron.enable = true;
+      #     citron.enable = true;
 
       # snes emulator
       snes9x.enable = true;
@@ -347,7 +352,7 @@
     };
 
     # vpn services
-#   openfortivpn.enable = true;
+    #   openfortivpn.enable = true;
   };
 
   # home-manager.users.${userName} = {
