@@ -12,6 +12,7 @@
 
     ./tools/clang.nix
     ./tools/cmake.nix
+    ./tools/ccache.nix
     ./tools/conan.nix
     ./tools/direnv.nix
     ./tools/insomnia.nix

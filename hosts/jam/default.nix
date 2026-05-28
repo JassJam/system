@@ -277,6 +277,7 @@
       valgrind.enable = true;
       conan.enable = true;
       meson.enable = true;
+      ccache.enable = true;
 
       # direnv
       direnv.enable = true;
@@ -333,6 +334,9 @@
 
       # homestuck viewer
       homestuck.enable = true;
+
+      # godot
+      godot.enable = true;
     };
   };
 

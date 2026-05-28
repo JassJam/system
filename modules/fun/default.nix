@@ -19,5 +19,7 @@
     ./other/qbittorrent.nix
     # homestuck viewer
     ./other/homestuck.nix
+    # godot
+    ./other/godot.nix
   ];
 }
