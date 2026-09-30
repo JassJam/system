@@ -2,6 +2,8 @@
   imports = [
     ./editors/jetbrains.nix
     ./editors/vscode.nix
+    ./editors/vscodium.nix
+    ./editors/zed.nix
 
     ./langs/dotnet.nix
     ./langs/emscripten.nix

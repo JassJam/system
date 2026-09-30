@@ -1,4 +1,5 @@
 {
+  jutils,
   lib,
   config,
   pkgs,
@@ -9,25 +10,14 @@ let
   cfg-ssh = config.secrets.ssh;
 in
 {
-  options.secrets.ssh = {
-    enable = lib.mkEnableOption "SSH client for secure shell access";
-    enable-music-server = lib.mkEnableOption "Music server SSH configuration with sops secrets";
+  options.secrets.ssh = jutils.mkOptions {
+    description = "SSH client for secure shell access.";
   };
 
   config = lib.mkIf cfg-ssh.enable {
     home-manager.users.${userName} =
       { config, ... }:
       {
-        sops.templates."ssh-n-server-config" = lib.mkIf cfg-ssh.enable-music-server {
-          content = ''
-            Host n-server
-              HostName ${config.sops.placeholder."ssh/n-server/hostname"}
-              User ${config.sops.placeholder."ssh/n-server/user"}
-              IdentityFile ~/.ssh/n-server
-              IdentitiesOnly yes
-          '';
-        };
-
         programs.ssh = {
           enable = true;
           enableDefaultConfig = false;
@@ -36,16 +26,11 @@ in
             "*" = {
               serverAliveInterval = 60;
               serverAliveCountMax = 3;
+              identitiesOnly = true;
             };
           };
-
-          extraConfig = ''
-            AddKeysToAgent yes
-          ''
-          + lib.optionalString cfg-ssh.enable-music-server ''
-            Include ${config.sops.templates."ssh-n-server-config".path}
-          '';
-        };
+        }
+        // cfg-ssh.options;
       };
   };
 }

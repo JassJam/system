@@ -10,7 +10,6 @@
 {
   imports = [
     ./fonts.nix
-    ./secrets
     ./nixos
   ];
 
@@ -75,6 +74,14 @@
           enable = true;
           settings = {
             eDP-1 = {
+              path = "~/images/wallpapers";
+              apply-shadow = true;
+              duration = "10m";
+              sorting = "random";
+              mode = "fit";
+            };
+
+            HDMI-A-1 = {
               path = "~/images/wallpapers";
               apply-shadow = true;
               duration = "10m";
@@ -230,16 +237,17 @@
   };
 
   browsers = {
-    # gnome browser
     # epiphany.enable = true;
-    # firefox browser
-    firefox.enable = true;
+    # firefox.enable = true;
+    zen-browser.enable = true;
   };
 
   coding = {
     editors = {
-      # vscode, text editor
-      vscode.enable = true;
+      # text editors
+      # vscode.enable = true;
+      vscodium.enable = true;
+      zed.enable = true;
 
       jetbrains.toolbox = true;
       # java ide
@@ -300,10 +308,10 @@
     # matrix client
     element.enable = true;
     # corporate chat clients
-    slack.enable = true;
+    # slack.enable = true;
     # general chat clients
     telegram.enable = true;
-    whatsapp.enable = true;
+    # whatsapp.enable = true;
     nixcord.vesktop.enable = true;
   };
 
@@ -336,7 +344,7 @@
       homestuck.enable = true;
 
       # godot
-      godot.enable = true;
+      # godot.enable = true;
     };
   };
 
@@ -347,7 +355,6 @@
     # enable ssh and music server config
     ssh = {
       enable = true;
-      enable-music-server = true;
     };
 
     # password management
@@ -356,7 +363,6 @@
     # git version control
     vcs.git = {
       enable = true;
-      use-secrets = true;
     };
 
     # vpn services

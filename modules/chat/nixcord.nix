@@ -22,10 +22,13 @@ in
   };
 
   config = lib.mkIf any-enabled {
-    home-manager.sharedModules = [ inputs.nixcord.homeModules.nixcord ];
+    home-manager.sharedModules = [
+      inputs.nixcord.homeModules.nixcord
+    ];
     home-manager.users.${userName} = {
       programs.nixcord = {
         enable = true;
+        discord.enable = false;
         vesktop = {
           enable = true;
           package = pkgs.vesktop;

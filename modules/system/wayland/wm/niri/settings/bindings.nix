@@ -60,6 +60,9 @@ in
     "rofi"
     "-show"
     "drun"
+    "-icon-theme"
+    "Papirus"
+    "-show-icons"
   ];
 
   "Mod+1".action.focus-workspace = 1;

@@ -22,8 +22,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -45,6 +45,7 @@
     }@inputs:
     let
       system = builtins.currentSystem or "x86_64-linux";
+      jutils = import ./jutils { inherit (nixpkgs) lib; };
 
       # Helper function to create system configuration
       mkSystem =
@@ -54,6 +55,7 @@
           fullName,
         }:
         nixpkgs.lib.nixosSystem {
+
           system = {
             buildPlatform = system;
             hostPlatform = system;
@@ -67,6 +69,7 @@
               userName
               hostName
               fullName
+              jutils
               ;
             root = self;
           };
@@ -84,7 +87,7 @@
       nixosModules = {
         dotfiles = import ./.;
       }
-      // ./modules import;
+      // (import ./modules);
 
       nixosConfigurations = {
         jam = mkSystem {
